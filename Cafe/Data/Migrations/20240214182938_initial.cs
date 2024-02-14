@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Cafe.Migrations
+namespace Cafe.Data.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration
