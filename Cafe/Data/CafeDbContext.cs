@@ -11,6 +11,8 @@ namespace Cafe.Data
     class CafeDbContext:DbContext
     {
         public DbSet<Waiter> Waiters { get; set; }
+        public DbSet<ClientTable> ClientTables { get; set; }
+        public DbSet<Order> Orders { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

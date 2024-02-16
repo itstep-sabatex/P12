@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dg"></DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBox x:Name="waiterName" />
+
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="dg"></DataGrid>
     </Grid>
 </Window>
