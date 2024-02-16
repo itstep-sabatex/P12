@@ -32,21 +32,21 @@ namespace Cafe
 
             using (var context = new CafeDbContext())
             {
-                var Waiter = context.Waiters.First(s => Name == "Peter Maco");
+                var Waiter = context.Waiters.First(s => s.Name == "Peter Maco");
 
 
 
                 var order = new Order()
                 {
                     ClientTable = new ClientTable() { Name = "BOSS" },
-                    Waiter = context.Waiters.First(s => Name == "Peter Maco"),
+                    Waiter = context.Waiters.First(s => s.Name == "Peter Maco"),
                     Date = DateTime.Parse("01.01.2020")
                 };
                 context.Orders.Add(order);
                 order = new Order()
                 {
                     ClientTable = new ClientTable() { Name = "BOSS2" },
-                    Waiter = context.Waiters.First(s => Name == "Peter Maco"),
+                    Waiter = context.Waiters.First(s => s.Name == "Peter Maco"),
                     Date = DateTime.Parse("01.01.2020")
                 };
                 context.Orders.Add(order);
@@ -57,7 +57,7 @@ namespace Cafe
                 context.ClientTables.Add(clientTable); 
                 context.SaveChanges();
 
-                var waiter = context.Waiters.First(s => Name == "Peter Maco");
+                var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
                 order = new Order()
                 {
                     ClientTable = clientTable,
