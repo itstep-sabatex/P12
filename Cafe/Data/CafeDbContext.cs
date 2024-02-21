@@ -13,6 +13,8 @@ namespace Cafe.Data
         public DbSet<Waiter> Waiters { get; set; }
         public DbSet<ClientTable> ClientTables { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Nomenclature> Nomenclatures { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

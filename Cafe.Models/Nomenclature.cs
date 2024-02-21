@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Cafe.Models
 {
-    public class ClientTable
+    public class Nomenclature
     {
-        public int A;
         public int Id { get; set; }
         public string Name { get; set; } = default!;
-        public IEnumerable<Order>? Orders { get; set; }
+        public double Price { get; set; }
+
     }
 }

@@ -30,6 +30,8 @@ namespace Cafe
         {
             using (var context = new CafeDbContext())
             {
+                var waiters = context.Waiters.Include("Orders").ToArray();
+
                 var orders = context.Orders.Include("ClientTable").Include("Waiter").ToArray();
                 foreach (var order in orders)
                 {
@@ -42,19 +44,22 @@ namespace Cafe
 
 
 
-            //using (var context = new CafeDbContext())
-            //{
+            using (var context = new CafeDbContext())
+            {
             //    var Waiter = context.Waiters.First(s => s.Name == "Peter Maco");
 
 
 
-            //    var order = new Order()
-            //    {
-            //        ClientTable = new ClientTable() { Name = "BOSS" },
-            //        Waiter = context.Waiters.First(s => s.Name == "Peter Maco"),
-            //        Date = DateTime.Parse("01.01.2020")
+            //var order = new Order()
+            //{
+            //       ClientTable = new ClientTable() { Name = "BOSS" },
+            //       Waiter = context.Waiters.First(s => s.Name == "Peter Maco"),
+            //       Date = DateTime.Parse("01.01.2020")
             //    };
             //    context.Orders.Add(order);
+            
+            
+            
             //    order = new Order()
             //    {
             //        ClientTable = new ClientTable() { Name = "BOSS2" },
@@ -65,18 +70,18 @@ namespace Cafe
 
             //    context.SaveChanges();
 
-            //    var clientTable = new ClientTable() { Name="BOSS3"};
+                var clientTable = new ClientTable() { Name="BOSS3"};
             //    context.ClientTables.Add(clientTable); 
             //    context.SaveChanges();
 
-            //    var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
-            //    order = new Order()
-            //    {
-            //        ClientTable = clientTable,
-            //        Waiter = waiter,
-            //        Date = DateTime.Parse("01.01.2020")
-            //    };
-            //    context.Add(order);
+                var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
+                var order = new Order()
+                {
+                    ClientTableId = clientTable.Id,
+                    WaiterId = waiter.Id,
+                    Date = DateTime.Parse("01.01.2020")
+                };
+                context.Add(order);
             //    order = new Order()
             //    {
             //        ClientTable = clientTable,

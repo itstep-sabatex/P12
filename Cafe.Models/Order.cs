@@ -10,7 +10,10 @@ namespace Cafe.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public Waiter Waiter { get; set; } = default!;
-        public ClientTable ClientTable { get; set; }=default!;
+        public Waiter? Waiter { get; set; }
+        public int WaiterId { get; set; }
+        public ClientTable? ClientTable { get; set; }
+        public int ClientTableId { get; set; }
+        public double Bill { get; set; }
     }
 }
