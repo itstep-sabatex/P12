@@ -11,8 +11,8 @@ namespace Cafe
 {
     public static class Config
     {
-        public static string ConnectionString = "Data Source=192.168.10.20;Initial Catalog=RestorantNew;Persist Security Info=True;User ID=sa;Password=Aa12345678";
         public static IConfigurationRoot Configuration { get; set; }
+        
         //public static Abonent[] Abonents { get; set; }
         //public static SourceItem[] SourceItems { get; set; }
         //public static FoodItem[] FoodItems { get; set; }
