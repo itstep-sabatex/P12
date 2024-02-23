@@ -6,15 +6,11 @@
         xmlns:local="clr-namespace:Cafe"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <TextBox x:Name="waiterName" />
+    <Grid x:Name="mainGrid">
+        <local:Login x:Name="login" HorizontalAlignment="Center" Width="400" VerticalAlignment="Center" BorderBrush="Black" Background="AliceBlue" LoginResult="Login_LoginResult"/>
+        <Grid x:Name="mainForm" Visibility="Hidden">
+            <TextBlock>Основне вікно офіціянта</TextBlock>
+        </Grid>
 
-        </StackPanel>
-        <DataGrid Grid.Row="1" x:Name="dg"></DataGrid>
     </Grid>
 </Window>

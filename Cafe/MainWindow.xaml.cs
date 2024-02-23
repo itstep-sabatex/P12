@@ -32,11 +32,11 @@ namespace Cafe
             {
                 var waiters = context.Waiters.Include("Orders").ToArray();
 
-                var orders = context.Orders.Include("ClientTable").Include("Waiter").ToArray();
-                foreach (var order in orders)
-                {
-                    var s = order.ClientTable.Id;
-                }
+            //    var orders = context.Orders.Include("ClientTable").Include("Waiter").ToArray();
+            //    foreach (var order in orders)
+            //    {
+            //        var s = order.ClientTable.Id;
+            //    }
                
             }
 
@@ -44,8 +44,8 @@ namespace Cafe
 
 
 
-            using (var context = new CafeDbContext())
-            {
+            //using (var context = new CafeDbContext())
+            //{
             //    var Waiter = context.Waiters.First(s => s.Name == "Peter Maco");
 
 
@@ -70,18 +70,18 @@ namespace Cafe
 
             //    context.SaveChanges();
 
-                var clientTable = new ClientTable() { Name="BOSS3"};
+            //    var clientTable = new ClientTable() { Name="BOSS3"};
             //    context.ClientTables.Add(clientTable); 
             //    context.SaveChanges();
 
-                var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
-                var order = new Order()
-                {
-                    ClientTableId = clientTable.Id,
-                    WaiterId = waiter.Id,
-                    Date = DateTime.Parse("01.01.2020")
-                };
-                context.Add(order);
+                //var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
+                //var order = new Order()
+                //{
+                //    ClientTableId = clientTable.Id,
+                //    WaiterId = waiter.Id,
+                //    Date = DateTime.Parse("01.01.2020")
+                //};
+               // context.Add(order);
             //    order = new Order()
             //    {
             //        ClientTable = clientTable,
@@ -126,5 +126,44 @@ namespace Cafe
 
 
         }
+        private void RefreshGrid()
+        {
+            //using (var context = new RestoranDbContext())
+            //{
+            //    var r = context.Order.Where(w => w.WaiterId == Config.WaiterId)
+            //        .Join(context.Abonent, ws => ws.AbonentId, ab => ab.Id, (ws, ab) => new MainWindowViewModel { id = ws.Id, time_order = ws.TimeOrder.ToString("H:mm:ss"), abonent = ab.Name, Bill = ws.Bill }).ToArray();
+            //    dg.ItemsSource = new ObservableCollection<MainWindowViewModel>(r);
+            //    //var items = context.Order.ToArray();
+            //    //var s = new StringBuilder();
+            //    //foreach (var v in items)
+            //    //{
+            //    //    var str = "new Order { Id ="
+            //    //        + $" {v.Id}, WaiterId = {v.WaiterId}, AbonentId = {v.AbonentId}, TimeOrder";
+
+            //    //    s.AppendLine("new FoodItem { Name ="+$" \"{v.Name}\",Price = {v.Price}M, Id = {v.Id}"+" },");
+            //    //}
+            //    //var st = s.ToString();
+            //    //File.WriteAllText("sql.txt", st);
+
+
+
+            //}
+        }
+        private void Login_LoginResult(int? arg1, string arg2)
+        {
+            if (arg1 == null)
+                Close();
+            else
+            {
+                Config.WaiterId = arg1.Value;
+                Config.WaiterName = arg2;
+                Title = $"Офіціант {Config.WaiterName} : {DateTime.Now}";
+                login.Visibility = Visibility.Hidden;
+                RefreshGrid();
+                mainForm.Visibility = Visibility.Visible;
+            }
+
+        }
+
     }
 }
