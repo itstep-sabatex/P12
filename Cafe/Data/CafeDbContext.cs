@@ -16,11 +16,12 @@ namespace Cafe.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Nomenclature> Nomenclatures { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlite(@"FileName=C:\\Users\\serhi\\.databases\\itstep\\cafe.db");
-            optionsBuilder.UseNpgsql(Config.Configuration.GetConnectionString("PostgresqlConnection"));
+            optionsBuilder.UseSqlite(Config.Configuration.GetConnectionString("SQLiteConnection"));
+            //optionsBuilder.UseNpgsql(Config.Configuration.GetConnectionString("PostgresqlConnection"));
         }
     }
 }

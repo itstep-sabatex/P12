@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace Cafe.Data.Migrations
+namespace Cafe.Migrations
 {
     /// <inheritdoc />
-    public partial class m1 : Migration
+    public partial class m3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

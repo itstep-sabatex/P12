@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Cafe.Models
     public class Order
     {
         public int Id { get; set; }
+        [Key]
         public DateTime Date { get; set; }
         public Waiter? Waiter { get; set; }
         public int WaiterId { get; set; }
@@ -20,7 +22,7 @@ namespace Cafe.Models
         public int ClientTableId { get; set; }
         //[NotMapped]
         //[Column("ITOG")]
-        [Precision(16,2)]    // 2345.56  real/double  (numeric/decimal)
+        //[Precision(16,2)]    // 2345.56  real/double  (numeric/decimal)
         public double Bill { get; set; }
     }
     
