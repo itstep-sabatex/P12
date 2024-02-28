@@ -1,5 +1,4 @@
-﻿using Cafe.Data;
-using Cafe.Models;
+﻿using Cafe.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -30,7 +29,7 @@ namespace Cafe
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var context = Config.GetDbContext)
+            using (var context = Config.DbContext)
             {
                 var waiters = context.Waiters.Include("Orders").ToArray();
 

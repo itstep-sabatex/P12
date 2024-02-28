@@ -4,7 +4,6 @@
 
 
 using Microsoft.Extensions.DependencyInjection;
-using Cafe.Data;
 using Cafe.Models;
 using System;
 using System.Collections.Generic;
@@ -61,7 +60,7 @@ namespace Cafe
             Refresh();
         }
 
-        public  static BaseDbContext GetDbContext=>new CafeDbContextSQLite();
+        public  static BaseDbContext DbContext=>new CafeDbContextMySQL();
         public static int WaiterId { get; set; }
         public static string WaiterName { get; set; }
     }

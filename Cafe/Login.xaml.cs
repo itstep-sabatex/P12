@@ -1,5 +1,4 @@
-﻿using Cafe.Data;
-using Cafe.Models;
+﻿using Cafe.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +56,7 @@ public partial class Login : UserControl
 
     private void CheckPassword()
     {
-        using (var context = new CafeDbContext())
+        using (var context = Config.DbContext)
         {
             var r = context.Waiters.SingleOrDefault(s => s.Id == WaiterId);
             if (r?.Password == passwordPB.Password)
@@ -78,7 +77,7 @@ public partial class Login : UserControl
 
     private void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
-        using (var context = new CafeDbContext())
+        using (var context = Config.DbContext)
         {
             var r = context.Waiters.Select(s => new { id = s.Id, name = s.Name }).ToArray();
             waitersCB.ItemsSource = r;
