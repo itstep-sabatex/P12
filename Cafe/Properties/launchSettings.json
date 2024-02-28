@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Cafe": {
+      "commandName": "Project",
+      "commandLineArgs": "test",
+      "environmentVariables": {
+        "Development": ""
+      }
+    }
+  }
+}

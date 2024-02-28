@@ -43,8 +43,6 @@ namespace Cafe.Migrations
 
                     b.HasKey("Code");
 
-                    b.HasIndex("Name");
-
                     b.ToTable("Currencies");
                 });
 
@@ -126,6 +124,67 @@ namespace Cafe.Migrations
                     b.ToTable("OrderDetails");
                 });
 
+            modelBuilder.Entity("Cafe.Models.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Manager"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "User"
+                        });
+                });
+
+            modelBuilder.Entity("Cafe.Models.UserRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("WaiterId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.HasIndex("WaiterId");
+
+                    b.ToTable("UserRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RoleId = 1,
+                            WaiterId = 1
+                        });
+                });
+
             modelBuilder.Entity("Cafe.Models.Waiter", b =>
                 {
                     b.Property<int>("Id")
@@ -145,6 +204,15 @@ namespace Cafe.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Waiters");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Birthday = new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Administartor",
+                            Password = "12345"
+                        });
                 });
 
             modelBuilder.Entity("Cafe.Models.Order", b =>
@@ -183,6 +251,25 @@ namespace Cafe.Migrations
                     b.Navigation("Nomenclature");
 
                     b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Cafe.Models.UserRole", b =>
+                {
+                    b.HasOne("Cafe.Models.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cafe.Models.Waiter", "Waiter")
+                        .WithMany()
+                        .HasForeignKey("WaiterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("Waiter");
                 });
 
             modelBuilder.Entity("Cafe.Models.ClientTable", b =>

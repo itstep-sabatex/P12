@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Cafe.Models
 {
-    [Index(nameof(Name))]
+    //[Index(nameof(Name))]
     public class Currency
     {
         [Key]

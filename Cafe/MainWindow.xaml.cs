@@ -24,6 +24,8 @@ namespace Cafe
         public MainWindow()
         {
             InitializeComponent();
+            var pt =Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
