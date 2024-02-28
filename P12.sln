@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.DbContext", "Cafe.DbCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.DbContext.SQLIte", "Cafe.DbContext.SQLIte\Cafe.DbContext.SQLIte.csproj", "{56341B54-4460-40D0-8738-5B9A5D568935}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.DbContext.MySQL", "Cafe.DbContext.MySQL\Cafe.DbContext.MySQL.csproj", "{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{56341B54-4460-40D0-8738-5B9A5D568935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56341B54-4460-40D0-8738-5B9A5D568935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56341B54-4460-40D0-8738-5B9A5D568935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

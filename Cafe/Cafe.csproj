@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cafe.DbContext.MySQL\Cafe.DbContext.MySQL.csproj" />
+    <ProjectReference Include="..\Cafe.DbContext.SQLIte\Cafe.DbContext.SQLIte.csproj" />
     <ProjectReference Include="..\Cafe.Models\Cafe.Models.csproj" />
   </ItemGroup>
 

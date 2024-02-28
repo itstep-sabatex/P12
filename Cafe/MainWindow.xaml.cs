@@ -30,7 +30,7 @@ namespace Cafe
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var context = new CafeDbContext())
+            using (var context = Config.GetDbContext)
             {
                 var waiters = context.Waiters.Include("Orders").ToArray();
 
