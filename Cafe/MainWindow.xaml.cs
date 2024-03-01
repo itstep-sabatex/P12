@@ -29,9 +29,33 @@ namespace Cafe
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var context = Config.DbContext)
+            var l = new List<string>();
+
+
+            var s = "Зетренко Іван Іванович";
+
+            var result = s.Where(s => s != 'I');
+
+            s.SingleOrDefault(s => s == 'I');
+
+            s.Order().Skip(5).Take(6);
+     
+
+
+            if (s.Count()>0)
             {
-                var waiters = context.Waiters.Include("Orders").ToArray();
+
+            }
+            if (s.Any())
+            {
+
+            }
+
+                using (var context = Config.DbContext)
+            {
+   
+
+                var waiters = context.Waiters.Include("Orders").Where(s=>s.Name.StartsWith("Pt")).Select(sl=> new {sl.Name,sl.Id}).ToArray();
 
             //    var orders = context.Orders.Include("ClientTable").Include("Waiter").ToArray();
             //    foreach (var order in orders)

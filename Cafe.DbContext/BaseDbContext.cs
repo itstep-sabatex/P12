@@ -8,6 +8,12 @@ namespace Cafe.DbContext
 {
     public abstract class BaseDbContext: Microsoft.EntityFrameworkCore.DbContext
     {
+        readonly DbContextOptions contextOptions;
+        //protected BaseDbContext(DbContextOptions contextOptions)
+        //{
+        //    this.contextOptions = contextOptions;   
+        //}
+
         public DbSet<Waiter> Waiters { get; set; }
         public DbSet<ClientTable> ClientTables { get; set; }
         public DbSet<Order> Orders { get; set; }
