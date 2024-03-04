@@ -1,4 +1,5 @@
 ﻿using Cafe.Models;
+using Cafe.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -19,51 +20,32 @@ namespace Cafe
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Waiter> waiters; 
+        ObservableCollection<Waiter> waiters;
         public MainWindow()
         {
             InitializeComponent();
-            var pt =Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
-
         }
 
+
+        private void AddOrder(object sender, RoutedEventArgs e)
+        {
+            //mainForm.Visibility = Visibility.Collapsed;
+            //orderEdit.ShowOrderEdit(mainForm);
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var l = new List<string>();
 
-
-            var s = "Зетренко Іван Іванович";
-
-            var result = s.Where(s => s != 'I');
-
-            s.SingleOrDefault(s => s == 'I');
-
-            s.Order().Skip(5).Take(6);
-     
-
-
-            if (s.Count()>0)
-            {
-
-            }
-            if (s.Any())
-            {
-
-            }
-
-                using (var context = Config.DbContext)
-            {
-   
-
-                var waiters = context.Waiters.Include("Orders").Where(s=>s.Name.StartsWith("Pt")).Select(sl=> new {sl.Name,sl.Id}).ToArray();
+            //using (var context = Config.DbContext)
+            //{
+            //    var waiters = context.Waiters.Include("Orders").Where(s=>s.Name.StartsWith("Pt")).Select(sl=> new {sl.Name,sl.Id}).ToArray();
 
             //    var orders = context.Orders.Include("ClientTable").Include("Waiter").ToArray();
             //    foreach (var order in orders)
             //    {
             //        var s = order.ClientTable.Id;
             //    }
-               
-            }
+
+            //}
 
 
 
@@ -82,9 +64,9 @@ namespace Cafe
             //       Date = DateTime.Parse("01.01.2020")
             //    };
             //    context.Orders.Add(order);
-            
-            
-            
+
+
+
             //    order = new Order()
             //    {
             //        ClientTable = new ClientTable() { Name = "BOSS2" },
@@ -99,14 +81,14 @@ namespace Cafe
             //    context.ClientTables.Add(clientTable); 
             //    context.SaveChanges();
 
-                //var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
-                //var order = new Order()
-                //{
-                //    ClientTableId = clientTable.Id,
-                //    WaiterId = waiter.Id,
-                //    Date = DateTime.Parse("01.01.2020")
-                //};
-               // context.Add(order);
+            //var waiter = context.Waiters.First(s => s.Name == "Peter Maco");
+            //var order = new Order()
+            //{
+            //    ClientTableId = clientTable.Id,
+            //    WaiterId = waiter.Id,
+            //    Date = DateTime.Parse("01.01.2020")
+            //};
+            // context.Add(order);
             //    order = new Order()
             //    {
             //        ClientTable = clientTable,
@@ -153,11 +135,11 @@ namespace Cafe
         }
         private void RefreshGrid()
         {
-            //using (var context = new RestoranDbContext())
-            //{
-            //    var r = context.Order.Where(w => w.WaiterId == Config.WaiterId)
-            //        .Join(context.Abonent, ws => ws.AbonentId, ab => ab.Id, (ws, ab) => new MainWindowViewModel { id = ws.Id, time_order = ws.TimeOrder.ToString("H:mm:ss"), abonent = ab.Name, Bill = ws.Bill }).ToArray();
-            //    dg.ItemsSource = new ObservableCollection<MainWindowViewModel>(r);
+            using (var context = Config.DbContext)
+            {
+                var r = context.Orders.Where(w => w.WaiterId == Config.WaiterId)
+                    .Join(context.ClientTables, ws => ws.ClientTableId, ab => ab.Id, (ws, ab) => new MainWindowViewModel { Id = ws.Id, Time_order = ws.Date.ToString("H:mm:ss"), Abonent = ab.Name, Bill = ws.Bill }).ToArray();
+                dg.ItemsSource = new ObservableCollection<MainWindowViewModel>(r);
             //    //var items = context.Order.ToArray();
             //    //var s = new StringBuilder();
             //    //foreach (var v in items)
@@ -169,10 +151,7 @@ namespace Cafe
             //    //}
             //    //var st = s.ToString();
             //    //File.WriteAllText("sql.txt", st);
-
-
-
-            //}
+            }
         }
         private void Login_LoginResult(int? arg1, string arg2)
         {
@@ -189,6 +168,17 @@ namespace Cafe
             }
 
         }
+        private void dg_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //mainForm.Visibility = Visibility.Collapsed;
+            //var item = dg.CurrentItem as MainWindowViewModel;
+            //orderEdit.ShowOrderEdit(item.id);
+        }
+        private void Pay_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
     }
 }

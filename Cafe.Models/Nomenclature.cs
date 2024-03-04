@@ -15,6 +15,13 @@ namespace Cafe.Models
         //[Column(TypeName ="varchar(200)")]
         public string Name { get; set; } = default!;
         public double Price { get; set; }
-
+        public static IEnumerable<Nomenclature> DefaultNomenclatures()
+        {
+            yield return new Nomenclature { Id = 1, Name = "Суп гороховий", Price=45 };
+            yield return new Nomenclature { Id = 2, Name = "Суп сирний", Price = 75 };
+            yield return new Nomenclature { Id = 3, Name = "Суп харчо", Price = 55};
+            yield return new Nomenclature { Id = 4, Name = "Лоці", Price = 105 };
+            yield return new Nomenclature { Id = 5, Name = "Картопля фрі", Price = 60 };
+        }
     }
 }

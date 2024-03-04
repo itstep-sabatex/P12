@@ -24,6 +24,13 @@ namespace Cafe.Models
         //[Column("ITOG")]
         //[Precision(16,2)]    // 2345.56  real/double  (numeric/decimal)
         public double Bill { get; set; }
+
+        public static IEnumerable<Order> DefaultOrders()
+        {
+            yield return new Order { Id = 1, ClientTableId = 1, Date = DateTime.Now, WaiterId = 1};
+            yield return new Order { Id = 2, ClientTableId = 2, Date = DateTime.Now, WaiterId = 1 };
+            yield return new Order { Id = 3, ClientTableId = 3, Date = DateTime.Now, WaiterId = 1 };
+        }
     }
     
  

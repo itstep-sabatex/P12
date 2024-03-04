@@ -8,8 +8,29 @@
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid x:Name="mainGrid">
         <local:Login x:Name="login" HorizontalAlignment="Center" Width="400" VerticalAlignment="Center" BorderBrush="Black" Background="AliceBlue" LoginResult="Login_LoginResult"/>
-        <Grid x:Name="mainForm" Visibility="Hidden">
-            <TextBlock>Основне вікно офіціянта</TextBlock>
+        <Grid x:Name="mainForm" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Button Click="AddOrder" >Додати замовлення</Button>
+            </StackPanel>
+            <DataGrid Grid.Row="1" x:Name="dg" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="dg_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Час замовлення" Binding="{Binding Time_order}" Width="Auto"/>
+                    <DataGridTextColumn Header="Столик" Binding="{Binding Abonent}" Width="*"/>
+                    <DataGridTextColumn Header="Замовлено" Binding="{Binding Bill}" Width="*"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Pay_Click">Оплата</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
         </Grid>
 
     </Grid>

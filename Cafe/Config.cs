@@ -60,7 +60,7 @@ namespace Cafe
             Refresh();
         }
 
-        public  static BaseDbContext DbContext=>new CafeDbContextMySQL();
+        public  static BaseDbContext DbContext=>new CafeDbContextSQLite();
         public static int WaiterId { get; set; }
         public static string WaiterName { get; set; }
     }
