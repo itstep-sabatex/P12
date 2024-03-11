@@ -26,6 +26,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafe.DbContext.SQLIte", "Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafe.DbContext.MySQL", "Cafe.DbContext.MySQL\Cafe.DbContext.MySQL.csproj", "{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemProg", "SystemProg", "{B8AACA2D-DF27-4A10-BF89-6CB9A594BEC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessDemo", "ProcessDemo\ProcessDemo.csproj", "{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcProcessDemo", "CalcProcessDemo\CalcProcessDemo.csproj", "{41EF5817-FE70-4591-8840-F35193621EA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,9 +70,21 @@ Global
 		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A117CE-C9CA-4E4B-8CD3-7D0C2C959377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41EF5817-FE70-4591-8840-F35193621EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41EF5817-FE70-4591-8840-F35193621EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41EF5817-FE70-4591-8840-F35193621EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41EF5817-FE70-4591-8840-F35193621EA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFBA0525-78DC-4DFD-8AA8-C9BDE09EAEA1} = {B8AACA2D-DF27-4A10-BF89-6CB9A594BEC1}
+		{41EF5817-FE70-4591-8840-F35193621EA6} = {B8AACA2D-DF27-4A10-BF89-6CB9A594BEC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61D15D57-B494-49CD-B6C9-45C4018C6F7A}

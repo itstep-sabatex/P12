@@ -20,6 +20,8 @@ namespace Cafe.DbContext
         public DbSet<Nomenclature> Nomenclatures { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Currency> Currencies { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

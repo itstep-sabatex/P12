@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Cafe.Models
@@ -11,6 +12,7 @@ namespace Cafe.Models
         public int A;
         public int Id { get; set; }
         public string Name { get; set; } = default!;
+        [JsonIgnore]
         public IEnumerable<Order>? Orders { get; set; }
 
         public static IEnumerable<ClientTable> DefaultClientTables()

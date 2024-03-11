@@ -14,4 +14,5 @@ namespace Cafe.ViewModels
         public double? Bill { get; set; }
 
     }
+    public record MainWindowViewModelR(int Id,string Abonenet,string Time_order,double Bill);
 }

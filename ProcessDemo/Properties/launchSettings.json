@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ProcessDemo": {
+      "commandName": "Project",
+      "commandLineArgs": "debug",
+      "environmentVariables": {
+        "Development": ""
+      }
+    }
+  }
+}

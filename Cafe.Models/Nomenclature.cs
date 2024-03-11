@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Cafe.Models
@@ -15,6 +16,7 @@ namespace Cafe.Models
         //[Column(TypeName ="varchar(200)")]
         public string Name { get; set; } = default!;
         public double Price { get; set; }
+
         public static IEnumerable<Nomenclature> DefaultNomenclatures()
         {
             yield return new Nomenclature { Id = 1, Name = "Суп гороховий", Price=45 };

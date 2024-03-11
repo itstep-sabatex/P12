@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Cafe.Models
@@ -16,8 +17,10 @@ namespace Cafe.Models
         public int Id { get; set; }
         [Key]
         public DateTime Date { get; set; }
+        [JsonIgnore]
         public Waiter? Waiter { get; set; }
         public int WaiterId { get; set; }
+        [JsonIgnore]
         public ClientTable? ClientTable { get; set; }
         public int ClientTableId { get; set; }
         //[NotMapped]

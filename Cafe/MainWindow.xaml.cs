@@ -34,7 +34,8 @@ namespace Cafe
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            var r = CafeArchive.CreateArchive(Config.DbContext);
+ 
             //using (var context = Config.DbContext)
             //{
             //    var waiters = context.Waiters.Include("Orders").Where(s=>s.Name.StartsWith("Pt")).Select(sl=> new {sl.Name,sl.Id}).ToArray();
@@ -138,8 +139,8 @@ namespace Cafe
             using (var context = Config.DbContext)
             {
                 var r = context.Orders.Where(w => w.WaiterId == Config.WaiterId)
-                    .Join(context.ClientTables, ws => ws.ClientTableId, ab => ab.Id, (ws, ab) => new MainWindowViewModel { Id = ws.Id, Time_order = ws.Date.ToString("H:mm:ss"), Abonent = ab.Name, Bill = ws.Bill }).ToArray();
-                dg.ItemsSource = new ObservableCollection<MainWindowViewModel>(r);
+                    .Join(context.ClientTables, ws => ws.ClientTableId, ab => ab.Id, (ws, ab) => new MainWindowViewModelR(ws.Id,ws.Date.ToString("H:mm:ss"),ab.Name,ws.Bill)).ToArray();
+                dg.ItemsSource = new ObservableCollection<MainWindowViewModelR>(r);
             //    //var items = context.Order.ToArray();
             //    //var s = new StringBuilder();
             //    //foreach (var v in items)
