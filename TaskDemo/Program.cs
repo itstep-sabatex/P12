@@ -1,20 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-static Task<double> MultiplreOneElement(int dim, int i, int j, double[,] a, double[,] b)
+static double MultiplreOneElement(int dim, int i, int j, double[,] a, double[,] b)
 {
     double result = 0;
     for (int mi = 0; mi < dim; mi++)
     {
         result = result + a[i, mi] * b[mi, j];
     }
-    return Task.FromResult(result);
+    return result;
 }
 
 
 
 var a = new double[1, 1];
 
-File.
+
 
 var ts = Task<double>.Run(() => MultiplreOneElement(1, 1, 1, a, a));
 Task<double> Calc(double a, double b)
