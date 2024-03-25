@@ -31,7 +31,7 @@ async Task<double> CalcAsync(double a, double b)
 
 var tasync = CalcAsync(25, 65);
 tasync.Wait();
-tasync.
+
 var result = tasync.Result;
 
 Console.WriteLine(await CalcAsync(25, 65));
