@@ -41,11 +41,11 @@ namespace WpfMatrixDemo
         {
                  Dispatcher.Invoke(() =>
                 {
-                    Thread.Sleep(200);
+                    //Thread.Sleep(200);
                     pbAsThread.Value++;
-                    if (pbInThread.Value == 100)
+                    if (pbAsThread.Value == 100)
                     {
-                        timer.Dispose();
+                        timer?.Dispose();
                         timer = null;
                     }
                 });
@@ -56,13 +56,21 @@ namespace WpfMatrixDemo
         {
             pbInThread.Value = 0;
             a.Start();
+
+            
+            var result = Parallel.For(1, 100, (i, StateChanged) =>
+            {
+                Console.WriteLine($"Begin iterstion {i}"); 
+            });
+
+
         }
 
 
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            timer = new Timer(B_TimerTick, null, 0, 2);
+            timer = new Timer(B_TimerTick, null, 0, 200);
         }
     }
 }
