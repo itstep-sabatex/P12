@@ -20,7 +20,12 @@ var tcpServer = Task.Run(() => {
         Console.WriteLine($"Received: {Encoding.ASCII.GetString(buffer,0,bytes)}");
         var response = Encoding.ASCII.GetBytes("Hello");
         stream.Write(response, 0, response.Length);
-        var fs = File.OpenWrite("test2.txt");
+        bytes = stream.Read(buffer);
+        var fileName = Encoding.ASCII.GetString(buffer, 0, bytes);
+        var fs = File.OpenWrite($"n{fileName}");
+        stream.Write(Encoding.ASCII.GetBytes("Ok"));
+        stream.Flush();
+
         stream.CopyTo(fs);
         fs.Close();
 
@@ -40,6 +45,9 @@ var tcpClient =  Task.Run(()=>{
     var bytes = stream.Read(buffer);
     Console.WriteLine(Encoding.ASCII.GetString(buffer, 0, bytes));
     stream.Flush();
+    stream.Write(Encoding.ASCII.GetBytes("test.txt"));
+    stream.Flush();
+    bytes = stream.Read(buffer);
     var fs = File.OpenRead("test.txt");
     fs.CopyTo(stream);
 
