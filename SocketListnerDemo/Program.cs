@@ -7,7 +7,7 @@ Console.WriteLine("Hello, World!");
 
 var clientTask = Task.Run(() =>
 {
-    var ipAddress = IPAddress.Parse("127.0.0.1");
+    var ipAddress = IPAddress.Parse("192.168.1.109");
     IPEndPoint serverEndpoint = new IPEndPoint(ipAddress, 5000);
    
     int i = 0;
@@ -52,7 +52,7 @@ var clientTask = Task.Run(() =>
 
 var serverTask = Task.Run(() => 
 {
-    var ipAddress = IPAddress.Parse("127.0.0.1");
+    var ipAddress = IPAddress.Parse("192.168.1.109");
     IPEndPoint serverEndpoint = new IPEndPoint(ipAddress, 5000);
     var sSocket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
     try
