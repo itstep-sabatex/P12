@@ -28,6 +28,10 @@ var tcpServer = Task.Run(() => {
 
         stream.CopyTo(fs);
         fs.Close();
+        stream.Close();
+        stream = client.GetStream();
+
+        stream.Write(Encoding.ASCII.GetBytes("File copied..."));
 
 
         stream.Close();
@@ -50,6 +54,12 @@ var tcpClient =  Task.Run(()=>{
     bytes = stream.Read(buffer);
     var fs = File.OpenRead("test.txt");
     fs.CopyTo(stream);
+    stream.Flush();
+    fs.Close();
+    stream.;
+    stream = client.GetStream();
+    bytes = stream.Read(buffer);
+    Console.WriteLine(Encoding.ASCII.GetString(buffer, 0, bytes));
 
     stream.Close();
     client.Close();

@@ -56,7 +56,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketDemo", "NETPrograming
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocketListnerDemo", "SocketListnerDemo\SocketListnerDemo.csproj", "{9D4B7479-2CEB-496A-803D-C2C24458AA0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPListnerDemo", "TCPListnerDemo\TCPListnerDemo.csproj", "{2877EB66-F98C-426F-89E4-5BD39291F14A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCPListnerDemo", "TCPListnerDemo\TCPListnerDemo.csproj", "{2877EB66-F98C-426F-89E4-5BD39291F14A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPDemo", "UDPDemo\UDPDemo.csproj", "{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -156,6 +158,10 @@ Global
 		{2877EB66-F98C-426F-89E4-5BD39291F14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2877EB66-F98C-426F-89E4-5BD39291F14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2877EB66-F98C-426F-89E4-5BD39291F14A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
