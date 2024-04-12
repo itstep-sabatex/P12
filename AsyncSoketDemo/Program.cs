@@ -9,12 +9,21 @@ Console.WriteLine("Hello, World!");
 var server = Task.Run(() =>
 {
     var udpClient = new UdpClient();
-    udpClient.Client.Bind(new IPEndPoint(IPAddress.Any, 5000));
+    var endPoint = new IPEndPoint(IPAddress.Any, 5000);
+    udpClient.Client.Bind(endPoint);
+    var state = new UdpState(udpClient, endPoint);
 
-    var r = udpClient.BeginReceive(RecesiveCallback, null);
+    var r = udpClient.BeginReceive(RecesiveCallback, state);
     Console.WriteLine("Recesive started");
 });
 
+
+var client = Task.Run(() =>
+{
+    var udpClient = new UdpClient();
+    udpClient.SendAsync(Encoding.ASCII.GetBytes("Hello from client UDP"),"localhost",5000);
+    Console.WriteLine("Client message sended");
+});
 
 void RecesiveCallback(IAsyncResult ar)
 {

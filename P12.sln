@@ -60,7 +60,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCPListnerDemo", "TCPListne
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDPDemo", "UDPDemo\UDPDemo.csproj", "{CC1D303B-8D62-4B25-AA4C-DD8122F226BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncSoketDemo", "AsyncSoketDemo\AsyncSoketDemo.csproj", "{ACA39196-C908-40B4-839A-184CA2889D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncSoketDemo", "AsyncSoketDemo\AsyncSoketDemo.csproj", "{ACA39196-C908-40B4-839A-184CA2889D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPClientDemo", "FTPClientDemo\FTPClientDemo.csproj", "{01A3D79A-65E7-40F9-BC24-D9F29CC5CF9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMTPDemo", "SMTPDemo\SMTPDemo.csproj", "{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,6 +172,14 @@ Global
 		{ACA39196-C908-40B4-839A-184CA2889D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACA39196-C908-40B4-839A-184CA2889D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACA39196-C908-40B4-839A-184CA2889D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A3D79A-65E7-40F9-BC24-D9F29CC5CF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A3D79A-65E7-40F9-BC24-D9F29CC5CF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A3D79A-65E7-40F9-BC24-D9F29CC5CF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A3D79A-65E7-40F9-BC24-D9F29CC5CF9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
