@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using HttpClientDemo;
+using System.Buffers.Text;
 using System.Net;
 using System.Text;
 using System.Text.Json;
@@ -32,6 +33,9 @@ string clientId = "jhsdjsd";
 string destinationId = "3434";
 string token = "";
 
+
+byte[] bytes = new byte[] { };
+ var str =Convert.ToBase64String(bytes);
 
 void PostQuery(string objectType, string objectId)
 {
