@@ -56,7 +56,7 @@ var tcpClient =  Task.Run(()=>{
     fs.CopyTo(stream);
     stream.Flush();
     fs.Close();
-    stream.;
+
     stream = client.GetStream();
     bytes = stream.Read(buffer);
     Console.WriteLine(Encoding.ASCII.GetString(buffer, 0, bytes));
