@@ -66,7 +66,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FTPClientDemo", "FTPClientD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMTPDemo", "SMTPDemo\SMTPDemo.csproj", "{55E08F5E-8E0C-4C68-92F2-EFB8714520B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientDemo", "HttpClientDemo\HttpClientDemo.csproj", "{9B2ED73A-FC32-4ED7-ADF1-7CC9510E2B77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientDemo", "HttpClientDemo\HttpClientDemo.csproj", "{9B2ED73A-FC32-4ED7-ADF1-7CC9510E2B77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClientDemo", "WebClientDemo\WebClientDemo.csproj", "{C82D3BFE-11B6-44BF-8F36-69DF50BDAFFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -186,6 +188,10 @@ Global
 		{9B2ED73A-FC32-4ED7-ADF1-7CC9510E2B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2ED73A-FC32-4ED7-ADF1-7CC9510E2B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2ED73A-FC32-4ED7-ADF1-7CC9510E2B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82D3BFE-11B6-44BF-8F36-69DF50BDAFFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82D3BFE-11B6-44BF-8F36-69DF50BDAFFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82D3BFE-11B6-44BF-8F36-69DF50BDAFFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82D3BFE-11B6-44BF-8F36-69DF50BDAFFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
