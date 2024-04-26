@@ -14,6 +14,7 @@ namespace Cafe.Models
         public int Id { get; set; }
         [MaxLength(100)]
         //[Column(TypeName ="varchar(200)")]
+        [Display(Name ="Назва")]
         public string Name { get; set; } = default!;
         public double Price { get; set; }
 
