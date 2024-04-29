@@ -10,15 +10,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorDemo", "MauiBlazorDemo\MauiBlazorDemo.csproj", "{E12906F3-59C4-49CF-92F1-8F7BC6D02F66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5ACAFB06-7412-4D5B-901F-C7749C093346}"
-	ProjectSection(SolutionItems) = preProject
-		MVCDemo\MVCDemo.csproj = MVCDemo\MVCDemo.csproj
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesDemo", "RazorPagesDemo\RazorPagesDemo.csproj", "{A35E42F6-11F3-45B5-B09C-281E13A451A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPiDemo", "WebAPiDemo\WebAPiDemo.csproj", "{937E118B-4090-4445-AD98-7A9DA4C78403}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClientDemo", "WebClientDemo\WebClientDemo.csproj", "{6777E6AD-5B9D-4C9A-88E8-251A663A73B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafe.Models", "..\EF Core\Cafe.Models\Cafe.Models.csproj", "{680F760C-4FD4-4E17-B6CE-B5695D30E17C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCDemo", "MVCDemo\MVCDemo.csproj", "{EAB00A53-4B05-49FA-8F05-1C1B0410C093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +53,14 @@ Global
 		{6777E6AD-5B9D-4C9A-88E8-251A663A73B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6777E6AD-5B9D-4C9A-88E8-251A663A73B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6777E6AD-5B9D-4C9A-88E8-251A663A73B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680F760C-4FD4-4E17-B6CE-B5695D30E17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680F760C-4FD4-4E17-B6CE-B5695D30E17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680F760C-4FD4-4E17-B6CE-B5695D30E17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680F760C-4FD4-4E17-B6CE-B5695D30E17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB00A53-4B05-49FA-8F05-1C1B0410C093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB00A53-4B05-49FA-8F05-1C1B0410C093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB00A53-4B05-49FA-8F05-1C1B0410C093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB00A53-4B05-49FA-8F05-1C1B0410C093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

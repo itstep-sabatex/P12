@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cafe.Models\Cafe.Models.csproj" />
+    <ProjectReference Include="..\..\EF Core\Cafe.Models\Cafe.Models.csproj" />
   </ItemGroup>
 
 </Project>
