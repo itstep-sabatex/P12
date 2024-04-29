@@ -12,5 +12,8 @@ namespace MVCDemo.Data
         }
         public DbSet<Cafe.Models.Nomenclature> Nomenclature { get; set; } = default!;
         public DbSet<Cafe.Models.Order> Order { get; set; } = default!;
+        public DbSet<Cafe.Models.ClientTable> ClientTable { get; set; } = default!;
+        public DbSet<Cafe.Models.Waiter> Waiter { get; set; } = default!;
+        public DbSet<Cafe.Models.OrderDetail> OrderDetail { get; set; } = default!;
     }
 }
