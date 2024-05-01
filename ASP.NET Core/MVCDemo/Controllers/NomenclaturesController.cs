@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cafe.Models;
 using MVCDemo.Data;
+using MVCDemo.Models;
 
 namespace MVCDemo.Controllers
 {
@@ -20,9 +21,15 @@ namespace MVCDemo.Controllers
         }
 
         // GET: Nomenclatures
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? filter)
         {
-            return View(await _context.Nomenclature.ToListAsync());
+            var model = new NomenclatureIndexViwModel
+            {
+                Filter = filter ?? string.Empty,
+                Items = await _context.Nomenclature.Where(s => s.Name.StartsWith(filter ?? string.Empty)).ToListAsync()
+
+            };
+            return View(model);
         }
 
         // GET: Nomenclatures/Details/5
