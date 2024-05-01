@@ -21,7 +21,7 @@ namespace MVCDemo.Controllers
         }
 
         // GET: Nomenclatures
-        public async Task<IActionResult> Index(string? filter)
+        public async Task<IActionResult> Index(string? filter,bool SearchMiddle)
         {
             var model = new NomenclatureIndexViwModel
             {
@@ -29,6 +29,7 @@ namespace MVCDemo.Controllers
                 Items = await _context.Nomenclature.Where(s => s.Name.StartsWith(filter ?? string.Empty)).ToListAsync()
 
             };
+ 
             return View(model);
         }
 

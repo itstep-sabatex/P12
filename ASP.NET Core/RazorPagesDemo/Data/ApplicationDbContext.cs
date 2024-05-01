@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Cafe.Models;
 
 namespace RazorPagesDemo.Data
 {
@@ -9,5 +10,6 @@ namespace RazorPagesDemo.Data
             : base(options)
         {
         }
+        public DbSet<Cafe.Models.Nomenclature> Nomenclature { get; set; } = default!;
     }
 }

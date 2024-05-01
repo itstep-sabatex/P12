@@ -5,15 +5,18 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </div>
+    <div class="col">
 <form asp-controller="Nomenclatures" asp-action="Index" method="get">
-    Name: <input type="text" name="filter" value="@Model.Filter" /> 
-    <input type="submit" value="Filter"/>
-</form>
-
+    Шуати в середині:@Html.CheckBoxFor(m=>m.SearchMiddle);
+    Name: <input type="text" name="filter" value="@Model.Filter" />
+            <input type="submit" value="Filter" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
