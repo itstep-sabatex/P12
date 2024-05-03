@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cafe.Models
 {
@@ -8,6 +9,7 @@ namespace Cafe.Models
         public int Id { get; set; }
         public string Name { get; set; } = default!;
         public string? Password { get; set; }
+        [Range(typeof(DateTime), "1/1/1966", "1/1/2008")]
         public DateTime Birthday { get; set; }
         //public int Counter { get; set; }
         public IEnumerable<Order>? Orders { get; set; }

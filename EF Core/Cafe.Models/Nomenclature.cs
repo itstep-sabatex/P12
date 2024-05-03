@@ -15,6 +15,8 @@ namespace Cafe.Models
         [MaxLength(100)]
         //[Column(TypeName ="varchar(200)")]
         [Display(Name ="Назва")]
+        [StringLength(50,MinimumLength =5)]
+        [RegularExpression(@"^[А-ЩЬЮЯҐЄІЇ]{2}\d{6}$")]
         public string Name { get; set; } = default!;
         public double Price { get; set; }
 

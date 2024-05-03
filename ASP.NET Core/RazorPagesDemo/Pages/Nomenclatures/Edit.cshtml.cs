@@ -53,6 +53,10 @@ namespace RazorPagesDemo.Pages.Nomenclatures
                 return Page();
             }
 
+            ModelState.AddModelError("Nomenclature.Name", "Просто так бакенд не пропускає"); // 2 слова/унікальність/ Пиво Чернігівське  = Чернігівське пиво
+            return Page();
+
+
             _context.Attach(Nomenclature).State = EntityState.Modified;
 
             try
