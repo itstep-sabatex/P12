@@ -13,6 +13,22 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddMvc().AddViewLocalization();
+//var mailServiceProvider = builder.Configuration.GetSection("MailServiceProvider").Value;
+//if (mailServiceProvider == null)
+//{
+//    // bilder.Services.AddSingleton<IEmailSender,VirtualToFile>()
+
+
+//}else
+//{
+//    if (mailServiceProvider == "Google")
+//    {
+
+//    }
+//}
+
 
 var app = builder.Build();
 
@@ -34,6 +50,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseRequestLocalization();
 
 app.MapRazorPages();
 

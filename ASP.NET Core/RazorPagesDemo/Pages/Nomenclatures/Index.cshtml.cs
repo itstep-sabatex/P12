@@ -25,6 +25,7 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         public string Filter { get; set; }
         public async Task OnGetAsync()
         {
+     
             Nomenclature = await _context.Nomenclature.Where(f=>f.Name.Contains(Filter ?? string.Empty)).ToListAsync();
         }
     }
