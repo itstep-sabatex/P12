@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using RazorPagesDemo;
 using RazorPagesDemo.Data;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +17,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-builder.Services.AddMvc().AddViewLocalization();
+builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options => {
+    options.DataAnnotationLocalizerProvider = (type, factory) =>
+        factory.Create(typeof(DataAnotationSharedResorce));
+});
 //var mailServiceProvider = builder.Configuration.GetSection("MailServiceProvider").Value;
 //if (mailServiceProvider == null)
 //{
@@ -28,7 +34,14 @@ builder.Services.AddMvc().AddViewLocalization();
 
 //    }
 //}
-
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { new CultureInfo("en-US"), new CultureInfo("uk-UA") };
+    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+    //
+});
 
 var app = builder.Build();
 
@@ -50,8 +63,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseRequestLocalization();
+app.UseRequestLocalization(new RequestLocalizationOptions()
+{ ApplyCurrentCultureToResponseHeaders = true }
+.AddSupportedCultures(new[] { "en-US", "uk-UA" })
+.AddSupportedUICultures(new[] { "en-US", "uk-UA" })
+.SetDefaultCulture("en-US"));
 
 app.MapRazorPages();
+app.MapControllers();
 
 app.Run();
