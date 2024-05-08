@@ -11,13 +11,16 @@ namespace Cafe.Models
 {
     public class Nomenclature
     {
+        [JsonPropertyName("id")]
         public int Id { get; set; }
-        [MaxLength(100)]
+        //[MaxLength(100)]
         //[Column(TypeName ="varchar(200)")]
         [Display(Name ="Назва")]
-        [StringLength(50,MinimumLength =5)]
-        [RegularExpression(@"^[А-ЩЬЮЯҐЄІЇ]{2}\d{6}$",ErrorMessage = "The passport number is incorrect.")]
+        //[StringLength(50,MinimumLength =5)]
+        //[RegularExpression(@"^[А-ЩЬЮЯҐЄІЇ]{2}\d{6}$",ErrorMessage = "The passport number is incorrect.")]
+        [JsonPropertyName ("name")]
         public string Name { get; set; } = default!;
+        [JsonPropertyName("price")]
         public double Price { get; set; }
 
         public static IEnumerable<Nomenclature> DefaultNomenclatures()
