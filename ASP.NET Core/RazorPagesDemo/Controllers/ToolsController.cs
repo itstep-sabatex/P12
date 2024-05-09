@@ -15,5 +15,11 @@ namespace RazorPagesDemo.Controllers
             return LocalRedirect(returnUrl);
 
         }
+
+        [HttpGet] 
+        public IActionResult GetCount() {
+            return Ok(new { count = 10 });
+        }
+
     }
 }

@@ -23,7 +23,17 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         }
 
         public IList<Nomenclature> Nomenclature { get;set; } = default!;
-        
+
+
+        public int LinesPerPage { get; set; } = 12;
+
+
+        [BindProperty(SupportsGet = true)]
+        public int CurrentPage { get; set; } = 1;
+
+        public int Pages { get; set; }
+        public int Count { get; set; }
+
         [BindProperty(SupportsGet =true)]
         public string Filter { get; set; }
 
@@ -31,8 +41,21 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         public IFormFile Upload { get; set; }
         public async Task OnGetAsync()
         {
-     
-            Nomenclature = await _context.Nomenclature.Where(f=>f.Name.Contains(Filter ?? string.Empty)).ToListAsync();
+
+            //Nomenclature = await _context.Nomenclature.Where(f=>f.Name.Contains(Filter ?? string.Empty))
+            //                                          .OrderBy(o=>o.Id).Skip((CurrentPage -1)*LinesPerPage).Take(LinesPerPage).ToListAsync();
+            //Count = await _context.Nomenclature.Where(f => f.Name.Contains(Filter ?? string.Empty)).CountAsync();
+            var query = _context.Nomenclature.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(Filter))
+            {
+                query = query.Where(f => f.Name.Contains(Filter));
+            }
+            Nomenclature =await query.OrderBy(o => o.Id).Skip((CurrentPage - 1) * LinesPerPage).Take(LinesPerPage).ToListAsync();
+            Count = await query.CountAsync();
+
+            Pages = Count/LinesPerPage + ((Count % LinesPerPage) == 0?0:1);
+
+
         }
 
         public async Task OnPostAsync()

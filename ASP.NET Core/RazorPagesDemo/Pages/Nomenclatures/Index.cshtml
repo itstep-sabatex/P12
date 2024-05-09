@@ -55,3 +55,11 @@
 }
     </tbody>
 </table>
+<ul class="pagination">
+    @for(int i = 1; i <= Model.Pages; i++)
+    {
+        <li class="page-item @(i==Model.CurrentPage?"active":"")"><a class="page-link" asp-route-CurrentPage="@i">@i</a></li>
+    }
+</ul>
+
+
