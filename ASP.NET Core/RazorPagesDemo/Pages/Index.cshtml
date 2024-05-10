@@ -4,10 +4,20 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">@Localizer["Welcome"]</h1>
-    <button onclick=""
-
-    <p> @HtmlLocalizer["Learn about <a href=\"https://learn.microsoft.com/aspnet/core\">building Web apps with ASP.NET Core</a>."]</p>
-</div>
+<button onclick="fillTable()">Fill Table</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="nomenclatureTBody">
+  
+    </tbody>
+</table>
