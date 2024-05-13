@@ -3,6 +3,13 @@
 
 // Write your JavaScript code.
 
+function GetNomenclatures() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/api/nomenclatures', false);
+    xhr.responseType = 'json';
+    xhr.send();
+    return xhr.response;
+}
 
 function fillTable() {
 
@@ -28,6 +35,44 @@ function fillTable() {
                 let tdPrice = document.createElement("td");
                 tdPrice.innerHTML = data[i].price;
                 tr.appendChild(tdPrice);
+
+
+
+            }
+        }
+
+    }
+    xhr.send();
+
+}
+
+function fillTable() {
+
+    let idnomenclatureTBody = "nomenclatureTBody";
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/api/nomenclatures');
+    xhr.responseType = 'json';
+    xhr.onload = function () {
+        let status = xhr.status;
+        if (status == 200) {
+            let data = xhr.response;
+            let tb = document.getElementById(idnomenclatureTBody);
+            tb.innerHTML = null;
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                let id = "id" + data[i].id;
+                tr.id = id;
+                //tr.onclick = () => rowClick(id);
+                tb.appendChild(tr);
+                let tdName = document.createElement("td");
+                tr.appendChild(tdName);
+                tdName.innerHTML = data[i].name;
+                let tdPrice = document.createElement("td");
+                tdPrice.innerHTML = data[i].price;
+                tr.appendChild(tdPrice);
+
+
+
             }
         }
 

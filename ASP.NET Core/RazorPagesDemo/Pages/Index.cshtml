@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<MyTable data="GetNomenclatures()" columns="Name,Price" />
 <button onclick="fillTable()">Fill Table</button>
 <table class="table">
     <thead>
