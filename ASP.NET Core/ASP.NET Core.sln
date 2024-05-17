@@ -21,6 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cafe.Models", "..\EF Core\C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCDemo", "MVCDemo\MVCDemo.csproj", "{EAB00A53-4B05-49FA-8F05-1C1B0410C093}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F6162975-CBF8-40E5-870D-DF3FFA2553CF}"
+	ProjectSection(SolutionItems) = preProject
+		test1.md = test1.md
+		Test5.md = Test5.md
+		Test3.md = Test3.md
+		Test4.md = Test4.md
+		Test2.md = Test2.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +73,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6162975-CBF8-40E5-870D-DF3FFA2553CF} = {5ACAFB06-7412-4D5B-901F-C7749C093346}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A018FB1-1173-4A75-8D34-9E89DDFA2ACE}
