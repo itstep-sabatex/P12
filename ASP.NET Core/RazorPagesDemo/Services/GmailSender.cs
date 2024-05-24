@@ -18,5 +18,6 @@ namespace RazorPagesDemo.Services
             configuration.Bind("Email",emailconfig);
             throw new NotImplementedException();
         }
+        public string GetAdapterVersion()=>"1.0.0";
     }
 }
