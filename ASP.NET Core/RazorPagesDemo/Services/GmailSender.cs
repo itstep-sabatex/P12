@@ -18,5 +18,10 @@ namespace RazorPagesDemo.Services
             configuration.Bind("Email",emailconfig);
             throw new NotImplementedException();
         }
+        
+        public string GetVersion()
+        {
+            return "1.0.0";
+        }
     }
 }
