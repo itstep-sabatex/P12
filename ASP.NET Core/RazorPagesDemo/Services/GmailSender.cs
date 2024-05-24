@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace RazorPagesDemo.Services
 {
-    public class GmailSender : IEmailSender
+    public partial class GmailSender : IEmailSender
     {
         record EmailDescription(string Password);
 
