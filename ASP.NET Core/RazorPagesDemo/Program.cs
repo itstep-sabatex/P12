@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesDemo;
 using RazorPagesDemo.Data;
+using RazorPagesDemo.Services;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +26,7 @@ builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(o
     options.DataAnnotationLocalizerProvider = (type, factory) =>
         factory.Create(typeof(DataAnotationSharedResorce));
 });
+builder.Services.AddSingleton<IEmailSender, GmailSender>();
 //var mailServiceProvider = builder.Configuration.GetSection("MailServiceProvider").Value;
 //if (mailServiceProvider == null)
 //{

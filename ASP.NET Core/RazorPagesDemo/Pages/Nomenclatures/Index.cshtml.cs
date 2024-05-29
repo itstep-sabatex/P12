@@ -9,6 +9,8 @@ using Cafe.Models;
 using RazorPagesDemo.Data;
 using System.Text.Unicode;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
+using RazorPagesDemo.Services;
 
 namespace RazorPagesDemo.Pages.Nomenclatures
 {
@@ -16,10 +18,12 @@ namespace RazorPagesDemo.Pages.Nomenclatures
     {
         internal record NomenclatureR(int id,string name,string price);
         private readonly RazorPagesDemo.Data.ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public IndexModel(RazorPagesDemo.Data.ApplicationDbContext context)
+        public IndexModel(RazorPagesDemo.Data.ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public IList<Nomenclature> Nomenclature { get;set; } = default!;
@@ -35,12 +39,18 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         public int Count { get; set; }
 
         [BindProperty(SupportsGet =true)]
-        public string Filter { get; set; }
+        public string Filter { get; set; }=string.Empty;
 
         [BindProperty]
-        public IFormFile Upload { get; set; }
+        public IFormFile Upload { get; set; }=default!;
         public async Task OnGetAsync()
         {
+            var userId = User.GetUserId();
+
+            var user = await _userManager.GetUserAsync(User);
+
+            var g =new Guid(); // GUID 
+            // для баз даних      UUID є унікальним для таблиці (для первинного ключа)
 
             //Nomenclature = await _context.Nomenclature.Where(f=>f.Name.Contains(Filter ?? string.Empty))
             //                                          .OrderBy(o=>o.Id).Skip((CurrentPage -1)*LinesPerPage).Take(LinesPerPage).ToListAsync();
