@@ -19,11 +19,13 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         internal record NomenclatureR(int id,string name,string price);
         private readonly RazorPagesDemo.Data.ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IMyLogger _logger;
 
-        public IndexModel(RazorPagesDemo.Data.ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public IndexModel(RazorPagesDemo.Data.ApplicationDbContext context, UserManager<ApplicationUser> userManager,IMyLogger logger)
         {
             _context = context;
             _userManager = userManager;
+            _logger = logger;
         }
 
         public IList<Nomenclature> Nomenclature { get;set; } = default!;
@@ -46,6 +48,8 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         public async Task OnGetAsync()
         {
             var userId = User.GetUserId();
+
+            _logger.Info($"User {userId} get ...");
 
             var user = await _userManager.GetUserAsync(User);
 

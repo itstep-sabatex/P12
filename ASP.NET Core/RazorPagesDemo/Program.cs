@@ -31,6 +31,9 @@ builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(o
         factory.Create(typeof(DataAnotationSharedResorce));
 });
 builder.Services.AddSingleton<IEmailSender, GmailSender>();
+builder.Services.AddSingleton<IMyLogger,MyLogger>();
+builder.Services.AddScoped<MyLogger>();
+builder.Services.AddTransient<MyLogger>();
 //var mailServiceProvider = builder.Configuration.GetSection("MailServiceProvider").Value;
 //if (mailServiceProvider == null)
 //{
