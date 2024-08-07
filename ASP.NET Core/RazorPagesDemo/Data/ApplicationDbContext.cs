@@ -11,5 +11,11 @@ namespace RazorPagesDemo.Data
         {
         }
         public DbSet<Cafe.Models.Nomenclature> Nomenclature { get; set; } = default!;
+        public DbSet<UserTask> UserTasks { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<UserTask>().HasOne<ApplicationUser>().WithMany().HasForeignKey(F=>F.UserId).OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }
