@@ -139,7 +139,8 @@ namespace MVCDemo.Controllers
                 return NotFound();
             }
 
-            return View(nomenclature);
+            var resultView = View(nomenclature);
+            return resultView;
         }
 
         // POST: Nomenclatures/Delete/5

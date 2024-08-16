@@ -1,0 +1,14 @@
+﻿/Home/Index
+/[Controller]/[Action]
+
+DepartmentPerson
+
+Person
+
+ClientPerson
+ClientInvoice
+
+
+[Area]/[Controller]/[Action]
+
+Identity/Account/Login
