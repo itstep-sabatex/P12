@@ -92,5 +92,10 @@ namespace RazorPagesDemo.Pages.Nomenclatures
             Nomenclature = await _context.Nomenclature.Where(f => f.Name.Contains(Filter ?? string.Empty)).ToListAsync();
         }
 
+
+        public void Clean()
+        {
+
+        }
     }
 }

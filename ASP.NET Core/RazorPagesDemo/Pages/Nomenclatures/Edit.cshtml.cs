@@ -23,10 +23,14 @@ namespace RazorPagesDemo.Pages.Nomenclatures
         [BindProperty]
         public Nomenclature Nomenclature { get; set; } = default!;
 
+        //OnGet[Filter]Async
         public async Task<IActionResult> OnGetFilterAsync(int? id) // /Nomenclatures?handle=Filter
         {
             return Page();
         }
+
+        //OnGet
+        //OnGetAsync
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -43,6 +47,7 @@ namespace RazorPagesDemo.Pages.Nomenclatures
             Nomenclature = nomenclature;
             return Page();
         }
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
