@@ -1,0 +1,63 @@
+﻿@page
+@model RazorPagesDemo.Pages.NomenclatureJSModel
+
+<MyTable data="GetNomenclatures()" columns="Name,Price" />
+<button onclick="fillNomenclatureTable('nomenclatureTBody')">Fill Table</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="nomenclatureTBody">
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form  id="modalFormEdit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="NomenclatureEdit.Id" id="NomenclatureEdit.Id" />
+                    <div class="form-group">
+                        <label asp-for="NomenclatureEdit.Name" class="control-label"></label>
+                        <input asp-for="NomenclatureEdit.Name" class="form-control" id="NomenclatureEdit.Name" />
+                        <span asp-validation-for="NomenclatureEdit.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NomenclatureEdit.Price" class="control-label"></label>
+                        <input asp-for="NomenclatureEdit.Price" class="form-control" id="NomenclatureEdit.Price" />
+                        <span asp-validation-for="NomenclatureEdit.Price" class="text-danger"></span>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="editsavechanges()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@{
+}
+@section scripts {
+    <script type="text/javascript" src="~/js/Nomenclature.js"></script>
+    <script>
+        fillNomenclatureTable('nomenclatureTBody');
+    </script>
+}

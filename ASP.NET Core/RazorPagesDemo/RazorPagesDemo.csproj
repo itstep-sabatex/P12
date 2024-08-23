@@ -7,6 +7,8 @@
     <UserSecretsId>aspnet-RazorPagesDemo-a72c7eab-8363-4185-bdc8-c07fb2f20d87</UserSecretsId>
   </PropertyGroup>
 
+  
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
@@ -24,5 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\EF Core\Cafe.Models\Cafe.Models.csproj" />
   </ItemGroup>
+
+  
 
 </Project>

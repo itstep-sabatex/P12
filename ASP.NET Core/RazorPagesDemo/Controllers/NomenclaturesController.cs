@@ -23,7 +23,7 @@ namespace RazorPagesDemo.Controllers
 
         // GET: api/Nomenclatures
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Nomenclature>>> GetNomenclature()
+        public async Task<ActionResult<IEnumerable<Nomenclature>>> GetNomenclature(int? skip,int? take, string? orderby)
         {
             return await _context.Nomenclature.ToListAsync();
         }

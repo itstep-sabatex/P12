@@ -46,7 +46,16 @@ function fillTable() {
 
 }
 
-function fillTable() {
+function editItem(id, name, price) {
+    let a = 1;
+
+
+}
+
+
+function postNomenclature(formId) {
+    let formData = new FormData();
+    let response = await fetch('/api/nomenclatures', { method: 'POST', body: formData });
 
     let idnomenclatureTBody = "nomenclatureTBody";
     let xhr = new XMLHttpRequest();
