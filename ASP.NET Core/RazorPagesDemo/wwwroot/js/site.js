@@ -52,6 +52,11 @@ function editItem(id, name, price) {
 
 }
 
+function rowClick(id) {
+    let sr = document.getElementsByClassName('selectedRow');
+    // ...
+
+}
 
 function postNomenclature(formId) {
     let formData = new FormData();
